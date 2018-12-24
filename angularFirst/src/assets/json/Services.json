@@ -1,0 +1,21 @@
+[{
+		"ID": "001",
+		"Name": "Authentication"
+	},
+	{
+		"ID": "002",
+		"Name": "Payment Initiation"
+	},
+	{
+		"ID": "003",
+		"Name": "Payment Status Inquiry"
+	},
+	{
+		"ID": "004",
+		"Name": "Branch Holiday"
+	},
+	{
+		"ID": "005",
+		"Name": "Payment CutOff"
+	}
+]

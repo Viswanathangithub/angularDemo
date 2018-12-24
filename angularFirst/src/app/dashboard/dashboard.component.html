@@ -5,22 +5,22 @@ Welcome {{loggedInUser}}
 <div>
 <label class="selectleftlabel">Environments</label>
 <select class="selectleft">
-<option *ngFor="let env of environments">{{env}}</option>
+<option *ngFor="let env of environments">{{env.Name}}</option>
 </select>
 <label class="selectrightlabel">Infrastructure</label>
 <select class="selectright">
-<option *ngFor="let infra of infras">{{infra}}</option>
+<option *ngFor="let infra of infras">{{infra.Name}}</option>
 </select>
 <input type="text" class="textarea" name="name">
 </div> 
 <div>
 <label class="selectleftlabel">Clients</label>
 <select class="selectleft">
-<option *ngFor="let client of clients">{{client}}</option>
+<option *ngFor="let client of clients">{{client.Name}}</option>
 </select>
 <label class="selectrightlabel">API Services</label>
 <select class="selectright">
-<option *ngFor="let service of services">{{service}}</option>
+<option *ngFor="let service of services">{{service.Name}}</option>
 </select>
 </div>
 <br>
