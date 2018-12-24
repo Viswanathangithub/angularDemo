@@ -7,6 +7,11 @@ import { UserService } from '../user.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+	
+  environments=['DIT','SIT','UAT'];
+  clients=['Client1', 'Client2'];
+  infras=['V4','V5'];
+  services=['Authentication','Inquiry'];
 
   constructor(private user: UserService) { }
 

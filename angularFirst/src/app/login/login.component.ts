@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
 		  this.user.setUserName(username);
 		  console.log(this.user.getUserName());
 		  this.router.navigate(['dashboard']);
+	  } else {
+		  this.router.navigate(['error']);
 	  }
   }
 

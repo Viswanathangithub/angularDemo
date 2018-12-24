@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UserService } from './user.service';
+import { ErrorComponent } from './error/error.component';
 
 const appRoutes:Routes = [
 {
@@ -17,6 +18,10 @@ const appRoutes:Routes = [
 {
 	path: 'dashboard',
 	component: DashboardComponent
+},
+{
+	path: 'error',
+	component: ErrorComponent
 }
 ]
 
@@ -26,7 +31,8 @@ const appRoutes:Routes = [
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    ErrorComponent
   ],
   imports: [
 	RouterModule.forRoot(appRoutes),

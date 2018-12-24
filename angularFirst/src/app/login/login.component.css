@@ -4,12 +4,12 @@
 	align-items:center;
 	justify-content:center;
 }
-
 div.input {
 	position:relative;
 	margin-top:20px;
 }
 div.input label{
+	font-weight: bold;
 	position:absolute;
 	top:0;
 	transform:translateY(-50%);
@@ -21,4 +21,7 @@ div.input input{
 	padding:10px 20px;
 	font-size:25px;
 	outline:0;
+}
+.background {
+	background-color: skyblue;
 }

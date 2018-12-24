@@ -1,0 +1,36 @@
+.selectleft {
+	width: 202px;
+	height: 42px;
+	float:left;
+	position:absolute;
+	left:60px;
+	margin-top: 20px;
+}
+.selectleftlabel {
+	float: left;
+	margin-left: 80px;
+}
+.selectrightlabel {
+	float: left;
+	margin-left: 250px;
+}
+.selectright {
+	width: 202px;
+	height: 42px;
+	float:left;
+	position:absolute;
+	left:60px;
+	margin-left:300px;
+	margin-top: 20px;
+}
+.submit {
+	margin-left: 800px;
+}
+.textarea {
+	margin-left: 700px;
+	width: 502px;
+	height: 152px;
+}
+.background{
+	background-color: skyblue;
+}

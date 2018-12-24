@@ -1,3 +1,26 @@
-<p>
-  You are Authenticated
-</p>
+<div class="background">
+<div>
+<label class="selectleftlabel">Environments</label>
+<select class="selectleft">
+<option *ngFor="let env of environments">{{env}}</option>
+</select>
+<label class="selectrightlabel">Infrastructure</label>
+<select class="selectright">
+<option *ngFor="let infra of infras">{{infra}}</option>
+</select>
+<input type="text" class="textarea" name="name">
+</div> 
+<div>
+<label class="selectleftlabel">Clients</label>
+<select class="selectleft">
+<option *ngFor="let client of clients">{{client}}</option>
+</select>
+<label class="selectrightlabel">API Services</label>
+<select class="selectright">
+<option *ngFor="let service of services">{{service}}</option>
+</select>
+</div>
+<br>
+<br>
+<button type="submit" class="submit">Submit</button>
+</div>
