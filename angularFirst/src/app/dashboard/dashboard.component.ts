@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   clients : String[];
   infras : String[];
   services : String[];
+  outputResponse : String;
 
   constructor(private httpService: HttpClient, private router:Router, private user: UserService) {
 	  if(user.getUserLoggedIn()) {
@@ -24,6 +25,27 @@ export class DashboardComponent implements OnInit {
   } else {
 	  this.router.navigate(['error']);
   }
+  }
+  
+  payloadSubmit(e) {
+	  e.preventDefault():
+	  var payload = e.target.elements[2].value;
+	  
+	  let params = new HttpParams();
+	  params = params.append('env',e.target.elements[0].value);
+	  params = params.append('infra',e.target.elements[1].value);
+	  params = params.append('service',e.target.elements[4].value);
+	  params = params.append('client',e.target.elements[3].value);
+
+	  this.httpService.get('./assets/json/Response.json', {params: params})
+	  .subscribe(data => {
+		  this.outputResponse = JSON.stringify(data);
+		  console.log(this.outputResponse);
+	  },
+	  (err: HttpErrorResponse) => {
+        console.log (err.message);
+      }
+	  );
   }
 
   ngOnInit() {
