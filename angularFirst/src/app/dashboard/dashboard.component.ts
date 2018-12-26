@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
   clients : String[];
   infras : String[];
   services : String[];
+  formats : String[];
+  routeVersion : String[];
   outputResponse : String;
 
   constructor(private httpService: HttpClient, private router:Router, private user: UserService) {
@@ -28,14 +30,16 @@ export class DashboardComponent implements OnInit {
   }
   
   payloadSubmit(e) {
-	  e.preventDefault():
+	  e.preventDefault();
 	  var payload = e.target.elements[2].value;
 	  
 	  let params = new HttpParams();
 	  params = params.append('env',e.target.elements[0].value);
 	  params = params.append('infra',e.target.elements[1].value);
-	  params = params.append('service',e.target.elements[4].value);
-	  params = params.append('client',e.target.elements[3].value);
+	  params = params.append('format',e.target.elements[3].value);
+	  params = params.append('route',e.target.elements[4].value);
+	  params = params.append('client',e.target.elements[6].value);
+	  params = params.append('service',e.target.elements[7].value);
 
 	  this.httpService.get('./assets/json/Response.json', {params: params})
 	  .subscribe(data => {
@@ -53,6 +57,26 @@ export class DashboardComponent implements OnInit {
 	  .subscribe(data => {
 		  this.environments = data as String[];
 		  console.log(this.environments);
+	  },
+	  (err: HttpErrorResponse) => {
+        console.log (err.message);
+      }
+	  );
+	  
+	  this.httpService.get('./assets/json/Formats.json')
+	  .subscribe(data => {
+		  this.formats = data as String[];
+		  console.log(this.formats);
+	  },
+	  (err: HttpErrorResponse) => {
+        console.log (err.message);
+      }
+	  );
+	  
+	  this.httpService.get('./assets/json/Routes.json')
+	  .subscribe(data => {
+		  this.routeVersion = data as String[];
+		  console.log(this.routeVersion);
 	  },
 	  (err: HttpErrorResponse) => {
         console.log (err.message);

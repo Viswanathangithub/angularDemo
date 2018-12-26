@@ -4,7 +4,7 @@ Welcome {{loggedInUser}}
 <div class="background">
 <form (submit)="payloadSubmit($event)">
 <div>
-<label class="selectleftlabel">Environments</label>
+<label class="selectleftlabel">Environment</label>
 <select class="selectleft">
 <option *ngFor="let env of environments">{{env.Name}}</option>
 </select>
@@ -15,11 +15,22 @@ Welcome {{loggedInUser}}
 <input type="text" class="requestarea" name="request">
 </div> 
 <div>
-<label class="selectleftlabel">Clients</label>
+<label class="selectleftlabel">Client</label>
 <select class="selectleft">
 <option *ngFor="let client of clients">{{client.Name}}</option>
 </select>
-<label class="selectrightlabel">API Services</label>
+<label class="selectrightlabel">Environment Version</label>
+<select class="selectright">
+<option *ngFor="let route of routeVersion">{{route.Name}}</option>
+</select>
+<input type="text" class="requestarea" disabled name="response" value="{{outputResponse}}">
+</div> 
+<div>
+<label class="selectleftlabel">Response Format</label>
+<select class="selectleft">
+<option *ngFor="let format of formats">{{format.Name}}</option>
+</select>
+<label class="selectrightlabel">API Service</label>
 <select class="selectright">
 <option *ngFor="let service of services">{{service.Name}}</option>
 </select>
@@ -28,8 +39,4 @@ Welcome {{loggedInUser}}
 <br>
 <button type="submit" class="submit">Submit</button>
 </form>
-</div>
-
-<div>
-<input type="text" class="responsearea" disabled name="response" value="{{outputResponse}}">
 </div>
